@@ -94,7 +94,7 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Perform the slide animation
+   * Perform the slide animation with stagger effect
    */
   private async performSlideAnimation() {
     if (this.isAnimating || !this.containerElement || this.winnerItemElements.length === 0) return;
@@ -108,25 +108,38 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    // Slide entire container to the left
-    this.containerElement.style.transform = `translateX(-${slideDistance}px)`;
-    this.containerElement.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    // Animate each item with 20ms stagger
+    const items = this.winnerItemElements.toArray();
+    items.forEach((item, index) => {
+      const element = item.nativeElement;
+      element.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: `translateX(-${slideDistance}px)` }
+        ],
+        {
+          duration: 400,
+          delay: index * 20,
+          easing: 'ease-in-out',
+          fill: 'forwards'
+        }
+      );
+    });
 
-    // Wait for slide animation to complete
-    await this.wait(500);
+    // Wait for all animations to complete (400ms + last item delay)
+    const totalDuration = 400 + (items.length - 1) * 20;
+    await this.wait(totalDuration);
 
-    // Move first item to end and reset position instantly
-    this.containerElement.style.transition = 'none';
-    this.containerElement.style.transform = 'translateX(0)';
-    
+    // Reset all item transforms and move first item to end
+    items.forEach((item) => {
+      item.nativeElement.style.transform = '';
+    });
+
     this.moveFirstItemToTheEndOfTheList();
     this.cdr.detectChanges();
 
     // Wait a frame for DOM to update
     await this.waitFrame();
-
-    // Re-enable transitions
-    this.containerElement.style.transition = '';
 
     // Schedule next animation with random delay
     this.nextAnimationTime = Date.now() + this.random(600, 4000);
