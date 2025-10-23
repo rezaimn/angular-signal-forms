@@ -125,6 +125,13 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
 
     this.isAnimating = true;
 
+    // Calculate first item width + gap
+    const slideDistance = this.calcFirstItemWidth();
+    if (!slideDistance) {
+      this.isAnimating = false;
+      return;
+    }
+
     // Start stretch animation
     this.isStretching = true;
     this.cdr.detectChanges();
@@ -132,14 +139,25 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
     // Wait for stretch to complete (150ms)
     await this.wait(150);
 
-    // Move first item to end
+    // Slide entire container to the left
+    this.containerElement.style.transform = `translateX(-${slideDistance}px)`;
+    this.containerElement.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+
+    // Wait for slide animation to complete (500ms)
+    await this.wait(500);
+
+    // Now move first item to end and reset position instantly
+    this.containerElement.style.transition = 'none';
+    this.containerElement.style.transform = 'translateX(0)';
+    
     this.moveFirstItemToTheEndOfTheList();
     this.cdr.detectChanges();
 
-    // Wait for slide transition (500ms as defined in CSS)
-    await this.wait(500);
+    // Small delay to ensure DOM is updated
+    await this.wait(10);
 
-    // End stretch animation
+    // Re-enable transitions and end stretch
+    this.containerElement.style.transition = '';
     this.isStretching = false;
     this.cdr.detectChanges();
 
@@ -149,6 +167,26 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
     // Schedule next animation
     this.nextAnimationTime = Date.now() + this.random(600, 4000);
     this.isAnimating = false;
+  }
+
+  /**
+   * Calculate the width of the first item including gap
+   */
+  private calcFirstItemWidth(): number | null {
+    if (!this.winnerItemElements.first) return null;
+
+    const item = this.winnerItemElements.first.nativeElement;
+    const parent = item.parentElement;
+
+    if (!parent) return null;
+
+    const styles = this.pageService.windowService.window.getComputedStyle(item);
+    const parentStyles = this.pageService.windowService.window.getComputedStyle(parent);
+
+    const itemWidth = parseFloat(styles.width);
+    const gap = parseFloat(parentStyles.gap || '0');
+
+    return itemWidth + gap;
   }
 
   /**

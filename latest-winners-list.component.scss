@@ -29,7 +29,6 @@ $mtx-latest-winners-list-beta-config: map-merge-deep($mtx-latest-winners-list-be
   flex-wrap: nowrap;
   gap: space(4);
   will-change: transform;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item {
