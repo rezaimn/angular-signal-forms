@@ -108,11 +108,13 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    // Animate each item with 20ms stagger
+    // Animate each item with 20ms stagger and store animations
     const items = this.winnerItemElements.toArray();
+    const animations: Animation[] = [];
+    
     items.forEach((item, index) => {
       const element = item.nativeElement;
-      element.animate(
+      const animation = element.animate(
         [
           { transform: 'translateX(0)' },
           { transform: `translateX(-${slideDistance}px)` }
@@ -124,17 +126,17 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
           fill: 'forwards'
         }
       );
+      animations.push(animation);
     });
 
     // Wait for all animations to complete (400ms + last item delay)
     const totalDuration = 400 + (items.length - 1) * 20;
     await this.wait(totalDuration);
 
-    // Reset all item transforms and move first item to end
-    items.forEach((item) => {
-      item.nativeElement.style.transform = '';
-    });
+    // Cancel all animations to clear their effect
+    animations.forEach(anim => anim.cancel());
 
+    // Move first item to end
     this.moveFirstItemToTheEndOfTheList();
     this.cdr.detectChanges();
 
