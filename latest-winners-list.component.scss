@@ -1,0 +1,123 @@
+@import 'styles/core/setup';
+
+$mtx-latest-winners-list: () !default;
+$mtx-latest-winners-list-beta: () !default;
+$mtx-latest-winners-list-default: (
+  game-color: $mtxc-primary-color,
+  user-color: $mtxc-color-white,
+  won-color: $mtxc-color-white,
+);
+$mtx-latest-winners-list-beta-default: (
+  game-color: $mtxc-color-black,
+  user-color: $mtxc-color-black,
+  won-color: $mtxc-color-black,
+);
+$mtx-latest-winners-list-config: map-merge-deep($mtx-latest-winners-list-default, $mtx-latest-winners-list);
+$mtx-latest-winners-list-beta-config: map-merge-deep($mtx-latest-winners-list-beta-default, $mtx-latest-winners-list-beta);
+
+:host {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+
+  // this fixes rendering issues in firefox for the list animation
+  transform: translate3d(0, 0, 0);
+}
+
+.winners-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: space(4);
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item {
+  @include transition('background-color');
+
+  display: flex;
+  cursor: pointer;
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 170px;
+  padding: space(1);
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media (pointer: fine) {
+    &:hover {
+      background-color: rgb(255 255 255 / 12%);
+      border-radius: 6px;
+    }
+  }
+
+  // Stretch effect when animating
+  .winners-container.stretching & {
+    width: 178px; // Slightly wider during animation
+    transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.icon {
+  @include image-size($width: 1, $height: 1);
+
+  background: center/cover no-repeat;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  align-self: flex-start;
+  border-radius: 50%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+  padding-left: space(3);
+  text-align: left;
+}
+
+.game-name {
+  font-weight: var(--mx-font-weight-bold);
+  color: map-get($mtx-latest-winners-list-config, 'game-color');
+  font-size: $mx-font-size-small;
+}
+
+.name {
+  color: map-get($mtx-latest-winners-list-config, 'user-color');
+  font-size: $mx-font-size-xsmall;
+}
+
+.won {
+  color: map-get($mtx-latest-winners-list-config, 'won-color');
+  font-weight: 400;
+  font-size: $mx-font-size-xsmall;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.game-name,
+.name {
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.amount {
+  font-weight: var(--mx-font-weight-bold);
+  width: max-content;
+}
+
+.beta {
+  .game-name {
+    color: map-get($mtx-latest-winners-list-beta-config, 'game-color');
+  }
+
+  .name {
+    color: map-get($mtx-latest-winners-list-beta-config, 'user-color');
+  }
+
+  .won {
+    color: map-get($mtx-latest-winners-list-beta-config, 'won-color');
+  }
+}

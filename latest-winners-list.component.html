@@ -1,0 +1,22 @@
+<div class="winners-container" [class.stretching]="isStretching">
+  <div
+    tabindex="0"
+    #winnerItem
+    class="item"
+    [class]="theme"
+    *ngFor="let winner of winners$ | async; trackBy: trackBy"
+    (click)="navigateToGameUrl(winner.data)"
+    [dataMx]="'game-thumbnail-latest-winner'"
+    [dataMxExtras]="{ gameName: winner.data?.name }">
+    <div
+      class="icon"
+      [style.background-image]="'url(' + winner.data?.assets['1x1']?.state?.default + ')' | imageConverter: { params: { resize: '80px:*' } }"></div>
+    <div class="content">
+      <div class="game-name">{{ winner.data?.name }}</div>
+      <div class="name">{{ getPlayerName(winner) }}</div>
+      <div class="won">
+        {{ 'item.description1' | translate }} <span class="amount">{{ winner.winInProvidedCurrency.toFixed(0) | siteCurrency }}</span>
+      </div>
+    </div>
+  </div>
+</div>
