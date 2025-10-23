@@ -29,7 +29,6 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
   public winners$ = new BehaviorSubject<Winner[]>([]);
   public useNickname = this.environmentService.getEnvironment().settings.nicknameInWinnersList;
   public isFirstNameMaskedInLatestWinner = this.environmentService.getEnvironment().settings.isFirstNameMaskedInLatestWinner;
-  public isStretching = false;
 
   @ViewChildren('winnerItem') private winnerItemElements: QueryList<ElementRef>;
 
@@ -95,7 +94,7 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Perform the slide animation with stretch effect
+   * Perform the slide animation
    */
   private async performSlideAnimation() {
     if (this.isAnimating || !this.containerElement || this.winnerItemElements.length === 0) return;
@@ -109,21 +108,14 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    // Start stretch animation
-    this.isStretching = true;
-    this.cdr.detectChanges();
-
-    // Wait a frame for stretch to apply
-    await this.waitFrame();
-
     // Slide entire container to the left
     this.containerElement.style.transform = `translateX(-${slideDistance}px)`;
     this.containerElement.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
 
-    // Wait for slide animation to complete (500ms)
+    // Wait for slide animation to complete
     await this.wait(500);
 
-    // Now move first item to end and reset position instantly
+    // Move first item to end and reset position instantly
     this.containerElement.style.transition = 'none';
     this.containerElement.style.transform = 'translateX(0)';
     
@@ -133,15 +125,10 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
     // Wait a frame for DOM to update
     await this.waitFrame();
 
-    // Re-enable transitions and end stretch
+    // Re-enable transitions
     this.containerElement.style.transition = '';
-    this.isStretching = false;
-    this.cdr.detectChanges();
 
-    // Wait for stretch return animation (200ms)
-    await this.wait(200);
-
-    // Schedule next animation
+    // Schedule next animation with random delay
     this.nextAnimationTime = Date.now() + this.random(600, 4000);
     this.isAnimating = false;
   }

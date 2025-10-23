@@ -39,21 +39,13 @@ $mtx-latest-winners-list-beta-config: map-merge-deep($mtx-latest-winners-list-be
   flex: 1;
   overflow: hidden;
   min-width: 170px;
-  max-width: 170px;
   padding: space(1);
-  transition: max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (pointer: fine) {
     &:hover {
       background-color: rgb(255 255 255 / 12%);
       border-radius: 6px;
     }
-  }
-
-  // Stretch effect when animating
-  .winners-container.stretching & {
-    max-width: 182px;
-    transition: max-width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
