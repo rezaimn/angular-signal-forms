@@ -36,11 +36,11 @@ $mtx-latest-winners-list-beta-config: map-merge-deep($mtx-latest-winners-list-be
 
   display: flex;
   cursor: pointer;
-  flex: 0 0 auto;
+  flex: 1;
   overflow: hidden;
-  width: 170px;
+  min-width: 170px;
   padding: space(1);
-  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: flex 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (pointer: fine) {
     &:hover {
@@ -51,8 +51,8 @@ $mtx-latest-winners-list-beta-config: map-merge-deep($mtx-latest-winners-list-be
 
   // Stretch effect when animating
   .winners-container.stretching & {
-    width: 178px; // Slightly wider during animation
-    transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1.05;
+    transition: flex 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

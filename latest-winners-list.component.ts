@@ -51,9 +51,7 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.winnerItemElements.changes.pipe(first()).subscribe(() => {
-      setTimeout(() => {
-        this.startInitialAnimation();
-      });
+      this.initializeCarousel();
     });
   }
 
@@ -69,37 +67,16 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Start the initial stagger animation for all items
+   * Initialize the carousel
    */
-  private startInitialAnimation() {
+  private initializeCarousel() {
     const items = this.winnerItemElements.toArray();
     if (items.length === 0) return;
 
     this.containerElement = items[0].nativeElement.parentElement;
     if (!this.containerElement) return;
 
-    // Stagger animation: animate items appearing one by one
-    items.forEach((item, index) => {
-      const element = item.nativeElement;
-      element.animate(
-        [
-          { opacity: 0, transform: 'translateY(20px)' },
-          { opacity: 1, transform: 'translateY(0)' },
-        ],
-        {
-          duration: 400,
-          delay: index * 20,
-          easing: 'ease-in-out',
-          fill: 'forwards',
-        },
-      );
-    });
-
-    // Start the carousel after initial animation
-    const totalDelay = items.length * 20 + 400;
-    setTimeout(() => {
-      this.startCarousel();
-    }, totalDelay);
+    this.startCarousel();
   }
 
   /**
@@ -136,8 +113,8 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
     this.isStretching = true;
     this.cdr.detectChanges();
 
-    // Wait for stretch to complete (150ms)
-    await this.wait(150);
+    // Wait a frame for stretch to apply
+    await this.waitFrame();
 
     // Slide entire container to the left
     this.containerElement.style.transform = `translateX(-${slideDistance}px)`;
@@ -153,8 +130,8 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
     this.moveFirstItemToTheEndOfTheList();
     this.cdr.detectChanges();
 
-    // Small delay to ensure DOM is updated
-    await this.wait(10);
+    // Wait a frame for DOM to update
+    await this.waitFrame();
 
     // Re-enable transitions and end stretch
     this.containerElement.style.transition = '';
@@ -205,7 +182,14 @@ export class LatestWinnersListComponent implements AfterViewInit, OnDestroy {
    * Helper to wait for a duration
    */
   private wait(ms: number): Promise<void> {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
+
+  /**
+   * Helper to wait for next animation frame
+   */
+  private waitFrame(): Promise<void> {
+    return new Promise((resolve) => requestAnimationFrame(() => resolve()));
   }
 
   /**
