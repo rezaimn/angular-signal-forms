@@ -18,6 +18,15 @@ $mtx-modal-default: (
 );
 $mtx-modal-config: map-merge-deep($mtx-modal-default, $mtx-modal);
 
+@mixin fade-in-animation($delay: 0ms) {
+  opacity: 0;
+  transition: opacity 240ms $delay ease-out;
+
+  &.fade-in {
+    opacity: 1;
+  }
+}
+
 :host {
   position: fixed;
   inset: 0;
@@ -27,40 +36,25 @@ $mtx-modal-config: map-merge-deep($mtx-modal-default, $mtx-modal);
 
 .backdrop {
   @include stretch-absolute;
+  @include fade-in-animation;
 
   background: map-get($mtx-modal-config, 'backdrop-background');
-  opacity: 0;
-  transition: opacity 240ms ease-out;
-
-  &.fade-in {
-    opacity: 1;
-  }
 }
 
 .backdrop-hide-background {
   @include stretch-absolute;
+  @include fade-in-animation;
 
   background: map-get($mtx-modal-config, 'backdrop-hide-background');
-  opacity: 0;
-  transition: opacity 240ms ease-out;
-
-  &.fade-in {
-    opacity: 1;
-  }
 }
 
 .dialog-container {
   @include stretch-absolute;
   @include flex-center;
+  @include fade-in-animation(60ms);
 
   pointer-events: none;
   padding: 8px;
-  opacity: 0;
-  transition: opacity 240ms 60ms ease-out;
-
-  &.fade-in {
-    opacity: 1;
-  }
 
   @include supports-min-max {
     padding: calc(max(8px, var(--mx-safe-area-inset-top))) calc(max(8px, var(--mx-safe-area-inset-right))) calc(max(8px, var(--mx-safe-area-inset-bottom)))
@@ -80,14 +74,9 @@ $mtx-modal-config: map-merge-deep($mtx-modal-default, $mtx-modal);
 .dialog-container-custom {
   @include stretch-absolute;
   @include flex-center;
+  @include fade-in-animation(60ms);
 
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 240ms 60ms ease-out;
-
-  &.fade-in {
-    opacity: 1;
-  }
 
   > ::ng-deep * {
     pointer-events: auto;
