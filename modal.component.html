@@ -1,0 +1,75 @@
+<!-- backdrop -->
+<div
+  tabindex="0"
+  #backdrop
+  [ngClass]="[backdropClass]"
+  (click)="hideModal('backdrop')"></div>
+
+<!-- custom dialog -->
+<ng-container *ngIf="dialogTemplate; else defaultDialogTemplate">
+  <div
+    #dialog
+    class="dialog-container-custom">
+    <ng-template [ngTemplateOutlet]="dialogTemplate"></ng-template>
+  </div>
+</ng-container>
+
+<!-- default dialog -->
+<ng-template #defaultDialogTemplate>
+  <div
+    #dialog
+    class="dialog-container"
+    [ngClass]="[themeClass]">
+    <div
+      class="dialog"
+      id="dialog"
+      [ngClass]="[sizeClass]">
+      <div
+        class="dialog-inner-container"
+        [style.background-image]="dialogInnerContainerBackground ? 'url(' + dialogInnerContainerBackground + ')' : null">
+        <div
+          *ngIf="hasCloseIcon || title"
+          class="dialog-header"
+          [ngClass]="{ 'has-close-icon': hasCloseIcon }">
+          <img
+            alt=""
+            *ngIf="logo"
+            [src]="logo" />
+          <div [testId]="id ? id + '-title' : null">{{ title }}</div>
+          <app-icon
+            *ngIf="hasCloseIcon"
+            class="dialog-close"
+            [id]="'x'"
+            [margin]="0"
+            [testId]="id ? id + '-close' : null"
+            (click)="hideModal('closeIcon')"></app-icon>
+        </div>
+        <div
+          data-modal-scrollable-content
+          class="dialog-content"
+          [testId]="id ? id + '-content' : null"
+          [style.background-image]="background ? 'url(' + background + ')' : null">
+          <ng-template
+            *ngIf="contentTeaserTopTemplate"
+            [ngTemplateOutlet]="contentTeaserTopTemplate"></ng-template>
+          <div
+            class="dialog-content-inner"
+            [ngClass]="{ 'no-padding': !padding, 'border-bottom': borderBottom }">
+            <ng-template
+              *ngIf="contentTemplate"
+              [ngTemplateOutlet]="contentTemplate"></ng-template>
+            <ng-content></ng-content>
+          </div>
+          <ng-template
+            *ngIf="contentTeaserBottomTemplate"
+            [ngTemplateOutlet]="contentTeaserBottomTemplate"></ng-template>
+        </div>
+        <div
+          *ngIf="actionsTemplate"
+          class="dialog-actions">
+          <ng-template [ngTemplateOutlet]="actionsTemplate"></ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
