@@ -1,0 +1,326 @@
+@import 'styles/core/setup';
+
+$mtx-modal: () !default;
+$mtx-modal-default: (
+  color: var(--mtxc-color-black),
+  background: var(--mtxc-color-white),
+  header-color: null,
+  header-background: var(--mtxc-color-grey-10),
+  header-border-color: null,
+  actions-background: var(--mtxc-color-grey-10),
+  actions-border-color: var(--mtxc-color-grey-30),
+  close-icon-color: var(--mtxc-color-black),
+  backdrop-background: rgb(0 0 0 / 88%),
+  backdrop-hide-background: var(--mtxc-color-black),
+  dialog-header-background: rgba($mtxc-color-white, 0.1),
+  icon-height: 16px,
+  races-start-reminder-modal-border-bottom: $mtxc-primary-color,
+);
+$mtx-modal-config: map-merge-deep($mtx-modal-default, $mtx-modal);
+
+@mixin fade-in-animation($delay: 0ms) {
+  opacity: 0;
+  transition: opacity 240ms $delay ease-out;
+
+  &.fade-in {
+    opacity: 1;
+  }
+}
+
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: map-get($z-stack, 'modal');
+  display: block;
+}
+
+.backdrop {
+  @include stretch-absolute;
+  @include fade-in-animation;
+
+  background: map-get($mtx-modal-config, 'backdrop-background');
+}
+
+.backdrop-hide-background {
+  @include stretch-absolute;
+  @include fade-in-animation;
+
+  background: map-get($mtx-modal-config, 'backdrop-hide-background');
+}
+
+.dialog-container {
+  @include stretch-absolute;
+  @include flex-center;
+  @include fade-in-animation(60ms);
+
+  pointer-events: none;
+  padding: 8px;
+
+  @include supports-min-max {
+    padding: calc(max(8px, var(--mx-safe-area-inset-top))) calc(max(8px, var(--mx-safe-area-inset-right))) calc(max(8px, var(--mx-safe-area-inset-bottom)))
+      calc(max(8px, var(--mx-safe-area-inset-left)));
+  }
+
+  @media (height >= 600px) and (width >= 600px) {
+    padding: 8vmin 8vmin 12vmin;
+
+    @include supports-min-max {
+      padding: calc(max(8vmin, var(--mx-safe-area-inset-top))) calc(max(8vmin, var(--mx-safe-area-inset-right))) calc(max(12vmin, var(--mx-safe-area-inset-bottom)))
+        calc(max(8vmin, var(--mx-safe-area-inset-left)));
+    }
+  }
+}
+
+.dialog-container-custom {
+  @include stretch-absolute;
+  @include flex-center;
+  @include fade-in-animation(60ms);
+
+  pointer-events: none;
+
+  > ::ng-deep * {
+    pointer-events: auto;
+  }
+}
+
+.dialog {
+  @include box-shadow($level: 2);
+
+  display: flex;
+  width: 600px;
+  max-height: 100%;
+  max-width: 100%;
+  color: map-get($mtx-modal-config, 'color');
+  background: map-get($mtx-modal-config, 'background');
+  border-radius: 2px;
+  overflow: hidden;
+  pointer-events: auto;
+
+  &.size-x-small {
+    width: 360px;
+  }
+
+  &.size-medium {
+    width: 432px;
+  }
+
+  &.size-small {
+    width: 440px;
+  }
+
+  &.size-large {
+    width: 720px;
+  }
+
+  &.size-x-large {
+    width: 960px;
+  }
+
+  &.size-auto {
+    width: auto;
+  }
+
+  &.size-player-upgrade {
+    width: 529px;
+
+    @include breakpoint($mtxc-layout-registration-form-change) {
+      width: 1009px;
+    }
+  }
+}
+
+.dialog-inner-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dialog-header {
+  font-weight: var(--mx-font-weight-bold);
+
+  @include flex-center;
+  @include box-shadow;
+
+  position: relative;
+  color: map-get($mtx-modal-config, 'header-color');
+  background: map-get($mtx-modal-config, 'header-background');
+  padding: $mtxc-space-small $mtxc-space-base;
+  font-size: var(--mx-heading-4);
+  line-height: 18px;
+  min-height: 48px;
+  flex-shrink: 0;
+  text-align: center;
+  overflow-wrap: break-word;
+
+  &.has-close-icon {
+    padding-right: $mtxc-space-base + 18px + $mtxc-space-base;
+
+    @include breakpoint(480px) {
+      padding-left: $mtxc-space-base + 18px + $mtxc-space-base;
+    }
+  }
+
+  @if map-get($mtx-modal-config, 'header-border-color') {
+    border-bottom: 1px solid map-get($mtx-modal-config, 'header-border-color');
+  }
+
+  img {
+    padding-right: 10px;
+  }
+}
+
+.dialog-close {
+  position: absolute;
+  top: 50%;
+  right: $mtxc-space-base;
+  height: 18px;
+  width: 18px;
+  transform: translateY(-50%);
+  color: map-get($mtx-modal-config, 'close-icon-color');
+  cursor: pointer;
+
+  &::before {
+    @include stretch-absolute(space(-3.75));
+
+    content: '';
+  }
+}
+
+.dialog-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-wrap: break-word;
+  background: center/cover no-repeat;
+}
+
+.dialog-content-inner {
+  padding: $mtxc-space-base;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: $mtxc-space-small $mtxc-space-base;
+  background: map-get($mtx-modal-config, 'actions-background');
+
+  @if map-get($mtx-modal-config, 'actions-border-color') {
+    border-top: 1px solid map-get($mtx-modal-config, 'actions-border-color');
+  }
+
+  ::ng-deep [appButton] + [appButton] {
+    margin-left: $mtxc-space-base;
+  }
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.border-bottom {
+  border-bottom: var(--mx-border-radius-large) solid map-get($mtx-modal-config, 'races-start-reminder-modal-border-bottom');
+}
+
+// blank theme
+.dialog-container.is-blank {
+  .dialog {
+    color: var(--mtxc-color-white);
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+
+    .dialog-header {
+      color: var(--mtxc-color-white);
+      background: none;
+      box-shadow: none;
+    }
+
+    .dialog-close {
+      color: var(--mtxc-color-white);
+    }
+  }
+}
+
+// pwa theme
+.dialog-container.is-pwa {
+  align-items: flex-end;
+
+  .dialog {
+    /* stylelint-disable-next-line declaration-no-important */
+    border-radius: 22px !important;
+
+    .dialog-header {
+      background-color: var(--mtxc-color-white);
+      font-size: 12px;
+      justify-content: left;
+
+      &.has-close-icon {
+        padding-left: 17px;
+      }
+    }
+
+    .dialog-content {
+      background-color: $mx-grey-ten;
+      font-size: 12px;
+    }
+  }
+}
+
+// KYC theme
+.dialog-container.is-kyc {
+  .dialog {
+    .dialog-header {
+      justify-content: left;
+
+      img {
+        height: map-get($mtx-modal-config, 'icon-height');
+      }
+
+      &.has-close-icon {
+        padding-left: var(--mx-space);
+      }
+    }
+
+    .dialog-actions {
+      background-color: var(--mtxc-color-white);
+      border: none;
+      padding-bottom: var(--mx-space);
+    }
+  }
+}
+
+// BOV theme
+.dialog-container.is-bov {
+  .dialog {
+    .dialog-actions {
+      background-color: var(--mtxc-color-white);
+      border: none;
+      padding-bottom: var(--mx-space);
+    }
+  }
+}
+
+// dark theme
+.dialog-container.is-dark {
+  .dialog {
+    color: $mx-color-dark-content-color;
+    background: $mx-color-dark-content-background;
+    box-shadow: none;
+    border-radius: var(--mx-border-radius-large);
+
+    .dialog-header {
+      color: $mx-color-dark-content-color;
+      background: map-get($mtx-modal-config, 'dialog-header-background');
+      box-shadow: none;
+      justify-content: center;
+
+      &.has-close-icon {
+        text-align: start;
+      }
+    }
+
+    .dialog-close {
+      color: $mx-color-dark-content-color;
+    }
+  }
+}
