@@ -1,0 +1,40 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000; // Ensures the modal stays above the game canvas
+  display: block;
+}
+
+.nrgs-widget {
+  width: 100%;
+}
+
+#moneytypewrapper {
+  box-sizing: border-box;
+  position: absolute;
+  top: -100px;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 8px 16px;
+  font-size: var(--mx-paragraph-5);
+  line-height: 1.4;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: rgb(0 0 0 / 80%);
+  opacity: 0;
+  transition:
+    top 0.8s ease,
+    opacity 0.8s ease;
+}
+
+:host.is-visible #moneytypewrapper {
+  top: 0;
+  opacity: 1;
+}
