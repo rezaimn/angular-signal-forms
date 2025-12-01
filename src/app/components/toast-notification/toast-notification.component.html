@@ -1,0 +1,12 @@
+<ng-container *ngIf="toastItems$ | async as toastItems">
+  <div class="toast-notification-list">
+    <app-toast-notification-item
+      *ngFor="let item of toastItems; trackBy: trackByToastId"
+      class="toast-notification-item"
+      [class.toast-enter]="item.animateIn"
+      [theme]="item.toast.theme"
+      [mode]="mode"
+      [toast]="item.toast">
+    </app-toast-notification-item>
+  </div>
+</ng-container>

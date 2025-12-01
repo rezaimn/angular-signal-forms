@@ -1,0 +1,52 @@
+@import 'styles/core/setup';
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: var(--mx-space-xlarge) var(--mx-space);
+  width: calc(100% - 2 * var(--mx-space));
+  pointer-events: none;
+
+  &.has-legal-bar {
+    @include breakpoint($mtxc-layout-legal-bar) {
+      top: space(6);
+    }
+  }
+
+  @include breakpoint(480px) {
+    width: 450px;
+  }
+
+  app-toast-notification-item:last-child {
+    display: block;
+  }
+}
+
+.toast-notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mx-space-xxsmall, 0.75rem);
+}
+
+@keyframes toast-fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast-enter {
+  animation: toast-fade-slide-in 200ms ease forwards;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+app-toast-notification-item {
+  pointer-events: auto;
+  display: none;
+}
