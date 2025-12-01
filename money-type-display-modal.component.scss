@@ -1,0 +1,48 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000; // Added z index to ensure no overlapping
+  transition:
+    top 0.8s,
+    opacity 0.8s; // Optional: for smoother CSS transitions
+}
+
+#moneytypewrapper {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 8px 16px;
+  font-size: var(--mx-paragraph-5);
+  line-height: 1.4;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: rgb(0 0 0 / 80%);
+  transition:
+    top 0.8s,
+    opacity 0.8s;
+  
+  // Initial state (void => *) - matches Angular's void state
+  opacity: 0;
+  top: -100px;
+  
+  // Enter animation (void => in) - matches Angular's 'in' state
+  &.animate-in {
+    opacity: 1;
+    top: 0;
+  }
+  
+  // Exit animation (in => void) - overrides animate-in to return to void state
+  &.animate-out {
+    opacity: 0 !important;
+    top: -100px !important;
+  }
+}
