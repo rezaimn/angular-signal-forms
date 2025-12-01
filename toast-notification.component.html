@@ -1,0 +1,9 @@
+<ng-container *ngIf="toastItems$ | async as toastItems">
+  <div #toastContainer class="toast-container">
+    <app-toast-notification-item
+      *ngFor="let toast of toastItems; let i = index"
+      [theme]="toast.theme"
+      [mode]="mode"
+      [toast]="toast"></app-toast-notification-item>
+  </div>
+</ng-container>
