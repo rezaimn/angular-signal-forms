@@ -1,0 +1,42 @@
+@import 'styles/core/setup';
+
+@keyframes toastEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: var(--mx-space-xlarge) var(--mx-space);
+  width: calc(100% - 2 * var(--mx-space));
+  pointer-events: none;
+
+  &.has-legal-bar {
+    @include breakpoint($mtxc-layout-legal-bar) {
+      top: space(6);
+    }
+  }
+
+  @include breakpoint(480px) {
+    width: 450px;
+  }
+
+  app-toast-notification-item:last-child {
+    display: block;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+app-toast-notification-item {
+  pointer-events: auto;
+  display: none;
+  animation: toastEnter 200ms ease forwards;
+}
