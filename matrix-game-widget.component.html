@@ -1,0 +1,252 @@
+<div
+  #nrgsStartGame
+  id="nrgs-startGame"
+  class="nrgs-startGame">
+  <!-- integrationModes -->
+  <ng-container [ngSwitch]="integrationModeTemplate?.type">
+    <!-- game-html -->
+    <ng-container *ngSwitchCase="'StartGameHtml'">
+      <iframe id="nrgs-widget-game-iframe"></iframe>
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </ng-container>
+
+    <!-- game-iframe -->
+    <app-game-iframe
+      *ngSwitchCase="'StartGameIframe'"
+      appStopPageScrollOnHover
+      [integrationModeTemplate]="integrationModeTemplate"
+      [gameNrgsMode]="gameWidgetParameters?.gameNrgsMode"
+      [jwt]="gameWidgetParameters?.jwt"
+      [gameId]="gameWidgetParameters?.gameId"
+      [freespinsserviceurl]="gameWidgetParameters?.freespinsServiceUrl"
+      [platformId]="gameWidgetParameters?.platformId"
+      [template]="template">
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </app-game-iframe>
+
+    <!-- game-iframe-mobile -->
+    <app-game-iframe-mobile
+      *ngSwitchCase="'StartGameIframeHtmlMobile'"
+      appStopPageScrollOnHover
+      [integrationModeTemplate]="integrationModeTemplate"
+      [gameNrgsMode]="gameWidgetParameters?.gameNrgsMode"
+      [jwt]="gameWidgetParameters?.jwt"
+      [gameId]="gameWidgetParameters?.gameId"
+      [freespinsserviceurl]="gameWidgetParameters?.freespinsServiceUrl"
+      [platformId]="gameWidgetParameters?.platformId"
+      [template]="template">
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </app-game-iframe-mobile>
+
+    <!-- game-iframe-mynt -->
+    <app-game-iframe-mynt
+      *ngSwitchCase="'StartGameIframeMynt'"
+      [integrationModeTemplate]="integrationModeTemplate"
+      [gameNrgsMode]="gameWidgetParameters?.gameNrgsMode"
+      [jwt]="gameWidgetParameters?.jwt"
+      [gameId]="gameWidgetParameters?.gameId"
+      [freespinsserviceurl]="gameWidgetParameters?.freespinsServiceUrl"
+      [platformId]="gameWidgetParameters?.platformId"
+      [template]="template">
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </app-game-iframe-mynt>
+
+    <!-- game-netent -->
+    <app-game-netent
+      *ngSwitchCase="'StartGameNetent'"
+      [integrationModeTemplate]="integrationModeTemplate"
+      [gameNrgsMode]="gameWidgetParameters?.gameNrgsMode"
+      [jwt]="gameWidgetParameters?.jwt"
+      [gameId]="gameWidgetParameters?.gameId"
+      [freespinsserviceurl]="gameWidgetParameters?.freespinsServiceUrl"
+      [platformId]="gameWidgetParameters?.platformId"
+      [template]="template">
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </app-game-netent>
+
+    <!-- game-sg -->
+    <app-game-sg
+      *ngSwitchCase="'StartGameSG'"
+      appStopPageScrollOnHover
+      [integrationModeTemplate]="integrationModeTemplate"
+      [gameNrgsMode]="gameWidgetParameters?.gameNrgsMode"
+      [jwt]="gameWidgetParameters?.jwt"
+      [gameId]="gameWidgetParameters?.gameId"
+      [freespinsserviceurl]="gameWidgetParameters?.freespinsServiceUrl"
+      [platformId]="gameWidgetParameters?.platformId"
+      [template]="template">
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </app-game-sg>
+
+    <app-game-iframe-no-sandbox
+      *ngSwitchCase="'IframeNoSandbox'"
+      appStopPageScrollOnHover
+      [integrationModeTemplate]="integrationModeTemplate"
+      [gameNrgsMode]="gameWidgetParameters?.gameNrgsMode"
+      [jwt]="gameWidgetParameters?.jwt"
+      [gameId]="gameWidgetParameters?.gameId"
+      [freespinsserviceurl]="gameWidgetParameters?.freespinsServiceUrl"
+      [platformId]="gameWidgetParameters?.platformId"
+      [template]="template">
+      <ng-container appViewContainerRef></ng-container>
+      <ng-container notificationsViewContainerRef></ng-container>
+    </app-game-iframe-no-sandbox>
+
+    <!-- free-spins-modal -->
+    <app-free-spins-modal
+      *ngSwitchCase="'FreeSpinsModal'"
+      [data]="integrationModeTemplate?.payload"
+      (modalEvent)="modalEvent($event)"></app-free-spins-modal>
+    <!-- free-spins-result-modal -->
+    <app-free-spins-result-modal
+      *ngSwitchCase="'FreeSpinsResultModal'"
+      [data]="integrationModeTemplate?.payload"
+      (modalEvent)="modalEvent($event)"></app-free-spins-result-modal>
+    <!-- app-reminder-abes-modal -->
+    <app-reminder-abes-modal
+      *ngSwitchCase="'ReminderABESModal'"
+      [data]="integrationModeTemplate?.payload"
+      (modalEvent)="modalEvent($event)"></app-reminder-abes-modal>
+    <!-- app-questionary-abes-modal -->
+    <app-questionary-abes-modal
+      *ngSwitchCase="'QuestionnaireABESModal'"
+      [data]="integrationModeTemplate?.payload"
+      (modalEvent)="modalEvent($event)"></app-questionary-abes-modal>
+    <app-connection-lost-modal
+      *ngSwitchCase="'ConnectionLostModal'"
+      [platformId]="this.gameWidgetParameters.platformId"
+      (modalEvent)="modalEvent($event)"></app-connection-lost-modal>
+
+    <ng-container *ngSwitchCase="'Empty'"></ng-container>
+
+    <ng-container *ngSwitchCase="''">
+      <ng-container notificationsViewContainerRef></ng-container>
+    </ng-container>
+  </ng-container>
+
+  <!-- templates outside the game -->
+  <ng-container [ngSwitch]="template?.type">
+    <ng-container *ngSwitchCase="'Loading'">
+      <!-- loading screen -->
+      <ng-container *ngIf="!integrationModeTemplate?.type && !platform?.gameLoadingAnimation">
+        <div
+          id="loading"
+          class="nrgs-widget nrgs-loading">
+          {{ 'mtrx.game.startGame.loading' | translate }}
+        </div>
+      </ng-container>
+      <div
+        #loadingScreen
+        *ngIf="shouldShowLoading"
+        class="nrgs-widget nrgs-loading nrgs-loading-animation"
+        [class]="gameWidgetParameters?.platformId"
+        [class.fade-out]="isLoadingFadingOut"
+        (transitionend)="onLoadingAnimationEnd()">
+        <object [data]="(isProviderLicensed ? '/assets/img/game-loading-licensed.svg' : '/assets/img/game-loading.svg') | cdn | sanitize: 'resourceUrl'"></object>
+      </div>
+    </ng-container>
+
+    <div
+      *ngSwitchCase="'StartGameError'"
+      class="nrgs-widget nrgs-inactive nrgs-error">
+      <p>{{ template?.payload?.error?.message || 'mtrx.game.startGame.error' | translate }}</p>
+      <div
+        class="nrgs"
+        style="text-align: center">
+        <button
+          class="nrgs-button nrgs-button-secondary"
+          type="button"
+          (click)="closeGame()">
+          {{ 'mtrx.game.closeGame' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngSwitchCase="'InternalError'"
+      class="nrgs-widget nrgs-inactive nrgs-mustLogin">
+      <p>{{ 'mtrx.game.startGame.internalError' | translate }}</p>
+      <div
+        class="nrgs"
+        style="text-align: center">
+        <button
+          class="nrgs-button nrgs-button-secondary"
+          type="button"
+          (click)="closeGame()">
+          {{ 'mtrx.game.closeGame' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngSwitchCase="'Forbidden'"
+      class="nrgs-widget nrgs-inactive nrgs-forbidden">
+      <p>{{ template?.payload?.error?.message || 'mtrx.game.startGame.error' | translate }}</p>
+      <div
+        class="nrgs"
+        style="text-align: center">
+        <button
+          class="nrgs-button nrgs-button-secondary"
+          type="button"
+          (click)="closeGame()">
+          {{ 'mtrx.game.closeGame' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngSwitchCase="'MustLogin'"
+      class="nrgs-widget nrgs-inactive nrgs-mustLogin">
+      <p>{{ 'mtrx.game.startGame.mustLogin' | translate }}</p>
+      <div
+        class="nrgs"
+        style="text-align: center">
+        <button
+          class="nrgs-button nrgs-button-secondary"
+          type="button"
+          (click)="closeGame()">
+          {{ 'mtrx.game.closeGame' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngSwitchCase="'MissingData'"
+      class="nrgs-widget nrgs-inactive nrgs-missingData">
+      <p>{{ 'mtrx.game.startGame.wrongConfiguration' | translate }}</p>
+      <p>{{ 'mtrx.game.startGame.missingAttributes' | translate }}</p>
+      <div
+        class="nrgs"
+        style="text-align: center">
+        <button
+          class="nrgs-button nrgs-button-secondary"
+          type="button"
+          (click)="closeGame()">
+          {{ 'mtrx.game.closeGame' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngSwitchCase="'LegalRestrictions'"
+      class="nrgs-legalRestrictions nrgs-inactive">
+      <p>{{ 'mtrx.game.startGame.legalRestrictions' | translate }}</p>
+      <div
+        class="nrgs"
+        style="text-align: center">
+        <button
+          class="nrgs-button nrgs-button-secondary"
+          type="button"
+          (click)="closeGame()">
+          {{ 'mtrx.game.closeGame' | translate }}
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
