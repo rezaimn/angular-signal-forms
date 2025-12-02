@@ -1,0 +1,36 @@
+<div
+  #sideNavElement
+  class="section"
+  [ngClass]="fullscreen ? 'fullscreen' : ''">
+  <div class="navigation-content-wrapper">
+    <div
+      class="moneytype-title text"
+      *ngIf="currentSessionMoney$ | async as moneyType">
+      {{ 'mtrx.game.modal.moneyTypeDisplay.prefixText' | translate }}
+      <span [ngStyle]="{ color: moneyType?.color }">{{ 'nbe.notifications.moneyType.' + moneyType?.type | translate }}</span>
+    </div>
+    <div class="navigation-content">
+      <app-game-bonus-overview
+        *ngIf="isNbeEnabled"
+        [bonusInstance]="bonusInstance"></app-game-bonus-overview>
+      <app-races-nav
+        *ngIf="showRacesSidenav"
+        [gameId]="gameId"
+        [userRankPos]="userRankPos"></app-races-nav>
+      <div class="game-search">
+        <app-game-search
+          [showProviderFilter]="false"
+          [columnSize]="'three'"
+          [theme]="'dark'"></app-game-search>
+      </div>
+    </div>
+  </div>
+  <div class="exit-content">
+    <a
+      tabindex="0"
+      class="link link-primary"
+      (click)="closeNavigation()">
+      {{ 'races.exitGame' | translate }}</a
+    >
+  </div>
+</div>
