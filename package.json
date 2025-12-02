@@ -1,0 +1,16 @@
+{
+  "name": "angular-signal-forms",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsx tools/build.ts",
+    "build:advanced": "npx tsx tools/example-advanced.ts",
+    "verify": "npx tsx tools/verify-esm.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "inquirer": "^13.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
