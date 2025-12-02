@@ -19,7 +19,13 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["node"]
+    "types": ["node"],
+    "allowImportingTsExtensions": false,
+    "noEmit": true
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
 }
