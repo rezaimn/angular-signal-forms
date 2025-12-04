@@ -1,0 +1,16 @@
+{
+  "name": "matrix-frontend-tools",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Build tools for matrix-frontend",
+  "scripts": {
+    "build": "tsx ./build.ts"
+  },
+  "dependencies": {
+    "inquirer": "^13.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
