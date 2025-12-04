@@ -1,0 +1,18 @@
+{
+  "name": "matrix-frontend-esm-example",
+  "version": "25.22.2",
+  "private": true,
+  "scripts": {
+    "aduk": "npm run serve -- --site=aduk",
+    "serve": "tsx ./tools/build/build.ts --mode=serve --channel=web --environment=local",
+    "build": "tsx ./tools/build/build.ts --mode=build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "inquirer": "^13.0.0"
+  }
+}
