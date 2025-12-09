@@ -1,0 +1,21 @@
+{
+  "name": "angular-signal-forms-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:tools": "tsc -p tools/tsconfig.json",
+    "tools": "tsx tools/index.ts"
+  },
+  "dependencies": {
+    "inquirer": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}
