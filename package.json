@@ -1,0 +1,16 @@
+{
+  "name": "angular-signal-forms",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Angular Signal Forms",
+  "scripts": {
+    "build:tools": "tsc -p tools/tsconfig.json",
+    "tool:example": "node --import tsx tools/example-build.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "inquirer": "^13.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
