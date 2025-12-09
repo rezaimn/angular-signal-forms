@@ -1,0 +1,17 @@
+{
+  "name": "angular-signal-forms",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Angular Signal Forms with ESM build tools",
+  "scripts": {
+    "build": "tsx tools/build.ts",
+    "build:advanced": "tsx tools/example-advanced.ts",
+    "verify": "tsx tools/verify-esm.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "inquirer": "^13.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
