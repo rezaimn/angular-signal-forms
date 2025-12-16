@@ -1,0 +1,744 @@
+Found 'package.json' at '/workspace/package.json'.
+======== Resolving module '@matrix/fusion/api/bff' from '/workspace/test.ts'. ========
+Explicitly specified module resolution kind: 'Node16'.
+Resolving in CJS mode with conditions 'require', 'types', 'node'.
+'baseUrl' option is set to '/workspace', using this value to resolve non-relative module name '@matrix/fusion/api/bff'.
+Resolving module name '@matrix/fusion/api/bff' relative to base url '/workspace' - '/workspace/@matrix/fusion/api/bff'.
+Loading module as file / folder, candidate module location '/workspace/@matrix/fusion/api/bff', target file types: TypeScript, JavaScript, Declaration.
+File '/workspace/package.json' exists according to earlier cached lookups.
+Loading module '@matrix/fusion/api/bff' from 'node_modules' folder, target file types: TypeScript, JavaScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Found 'package.json' at '/workspace/node_modules/@matrix/fusion/package.json'.
+Entering conditional exports.
+Matched 'exports' condition 'types'.
+Using 'exports' subpath './api/bff' with target './api/bff/index.d.ts'.
+File '/workspace/node_modules/@matrix/fusion/api/bff/index.d.ts' does not exist.
+Failed to resolve under condition 'types'.
+Matched 'exports' condition 'default'.
+Using 'exports' subpath './api/bff' with target './fesm2022/matrix-fusion-api-bff.mjs'.
+File name '/workspace/node_modules/@matrix/fusion/fesm2022/matrix-fusion-api-bff.mjs' has a '.mjs' extension - stripping it.
+Failed to resolve under condition 'default'.
+Exiting conditional exports.
+Export specifier './api/bff' does not exist in package.json scope at path '/workspace/node_modules/@matrix/fusion'.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'matrix__fusion/api/bff'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'matrix__fusion/api/bff'
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+File '/workspace/node_modules/@matrix/fusion/package.json' exists according to earlier cached lookups.
+Entering conditional exports.
+Matched 'exports' condition 'types'.
+Using 'exports' subpath './api/bff' with target './api/bff/index.d.ts'.
+File name '/workspace/node_modules/@matrix/fusion/api/bff/index.d.ts' has a '.d.ts' extension - stripping it.
+Failed to resolve under condition 'types'.
+Matched 'exports' condition 'default'.
+Using 'exports' subpath './api/bff' with target './fesm2022/matrix-fusion-api-bff.mjs'.
+File name '/workspace/node_modules/@matrix/fusion/fesm2022/matrix-fusion-api-bff.mjs' has a '.mjs' extension - stripping it.
+Failed to resolve under condition 'default'.
+Exiting conditional exports.
+Export specifier './api/bff' does not exist in package.json scope at path '/workspace/node_modules/@matrix/fusion'.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@matrix/fusion/api/bff' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist.
+Found 'package.json' at '/workspace/node_modules/typescript/package.json'.
+======== Resolving module '@typescript/lib-es2020' from '/workspace/__lib_node_modules_lookup_lib.es2020.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020'
+Loading module '@typescript/lib-es2020' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2019' from '/workspace/__lib_node_modules_lookup_lib.es2019.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2019' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019'
+Loading module '@typescript/lib-es2019' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2019' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2018' from '/workspace/__lib_node_modules_lookup_lib.es2018.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2018' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018'
+Loading module '@typescript/lib-es2018' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2018' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017' from '/workspace/__lib_node_modules_lookup_lib.es2017.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017'
+Loading module '@typescript/lib-es2017' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2016' from '/workspace/__lib_node_modules_lookup_lib.es2016.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2016' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2016'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2016'
+Loading module '@typescript/lib-es2016' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2016' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015' from '/workspace/__lib_node_modules_lookup_lib.es2015.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015'
+Loading module '@typescript/lib-es2015' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es5' from '/workspace/__lib_node_modules_lookup_lib.es5.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es5' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es5'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es5'
+Loading module '@typescript/lib-es5' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es5' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-decorators' from '/workspace/__lib_node_modules_lookup_lib.decorators.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-decorators' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-decorators'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-decorators'
+Loading module '@typescript/lib-decorators' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-decorators' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-decorators/legacy' from '/workspace/__lib_node_modules_lookup_lib.decorators.legacy.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-decorators/legacy' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-decorators/legacy'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-decorators/legacy'
+Loading module '@typescript/lib-decorators/legacy' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-decorators/legacy' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/core' from '/workspace/__lib_node_modules_lookup_lib.es2015.core.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/core' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/core'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/core'
+Loading module '@typescript/lib-es2015/core' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/core' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/collection' from '/workspace/__lib_node_modules_lookup_lib.es2015.collection.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/collection' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/collection'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/collection'
+Loading module '@typescript/lib-es2015/collection' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/collection' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/iterable' from '/workspace/__lib_node_modules_lookup_lib.es2015.iterable.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/iterable' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/iterable'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/iterable'
+Loading module '@typescript/lib-es2015/iterable' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/iterable' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/symbol' from '/workspace/__lib_node_modules_lookup_lib.es2015.symbol.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/symbol' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/symbol'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/symbol'
+Loading module '@typescript/lib-es2015/symbol' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/symbol' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/generator' from '/workspace/__lib_node_modules_lookup_lib.es2015.generator.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/generator' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/generator'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/generator'
+Loading module '@typescript/lib-es2015/generator' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/generator' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/promise' from '/workspace/__lib_node_modules_lookup_lib.es2015.promise.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/promise' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/promise'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/promise'
+Loading module '@typescript/lib-es2015/promise' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/promise' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/proxy' from '/workspace/__lib_node_modules_lookup_lib.es2015.proxy.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/proxy' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/proxy'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/proxy'
+Loading module '@typescript/lib-es2015/proxy' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/proxy' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/reflect' from '/workspace/__lib_node_modules_lookup_lib.es2015.reflect.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/reflect' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/reflect'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/reflect'
+Loading module '@typescript/lib-es2015/reflect' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/reflect' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2015/symbol-wellknown' from '/workspace/__lib_node_modules_lookup_lib.es2015.symbol.wellknown.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2015/symbol-wellknown' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/symbol-wellknown'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2015/symbol-wellknown'
+Loading module '@typescript/lib-es2015/symbol-wellknown' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2015/symbol-wellknown' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2016/array-include' from '/workspace/__lib_node_modules_lookup_lib.es2016.array.include.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2016/array-include' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2016/array-include'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2016/array-include'
+Loading module '@typescript/lib-es2016/array-include' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2016/array-include' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2016/intl' from '/workspace/__lib_node_modules_lookup_lib.es2016.intl.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2016/intl' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2016/intl'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2016/intl'
+Loading module '@typescript/lib-es2016/intl' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2016/intl' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/arraybuffer' from '/workspace/__lib_node_modules_lookup_lib.es2017.arraybuffer.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/arraybuffer' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/arraybuffer'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/arraybuffer'
+Loading module '@typescript/lib-es2017/arraybuffer' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/arraybuffer' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/date' from '/workspace/__lib_node_modules_lookup_lib.es2017.date.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/date' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/date'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/date'
+Loading module '@typescript/lib-es2017/date' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/date' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/intl' from '/workspace/__lib_node_modules_lookup_lib.es2017.intl.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/intl' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/intl'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/intl'
+Loading module '@typescript/lib-es2017/intl' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/intl' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/object' from '/workspace/__lib_node_modules_lookup_lib.es2017.object.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/object' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/object'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/object'
+Loading module '@typescript/lib-es2017/object' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/object' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/sharedmemory' from '/workspace/__lib_node_modules_lookup_lib.es2017.sharedmemory.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/sharedmemory' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/sharedmemory'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/sharedmemory'
+Loading module '@typescript/lib-es2017/sharedmemory' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/sharedmemory' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/string' from '/workspace/__lib_node_modules_lookup_lib.es2017.string.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/string' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/string'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/string'
+Loading module '@typescript/lib-es2017/string' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/string' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2017/typedarrays' from '/workspace/__lib_node_modules_lookup_lib.es2017.typedarrays.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2017/typedarrays' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/typedarrays'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2017/typedarrays'
+Loading module '@typescript/lib-es2017/typedarrays' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2017/typedarrays' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2018/asynciterable' from '/workspace/__lib_node_modules_lookup_lib.es2018.asynciterable.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2018/asynciterable' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/asynciterable'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/asynciterable'
+Loading module '@typescript/lib-es2018/asynciterable' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2018/asynciterable' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2018/asyncgenerator' from '/workspace/__lib_node_modules_lookup_lib.es2018.asyncgenerator.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2018/asyncgenerator' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/asyncgenerator'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/asyncgenerator'
+Loading module '@typescript/lib-es2018/asyncgenerator' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2018/asyncgenerator' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2018/promise' from '/workspace/__lib_node_modules_lookup_lib.es2018.promise.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2018/promise' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/promise'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/promise'
+Loading module '@typescript/lib-es2018/promise' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2018/promise' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2018/regexp' from '/workspace/__lib_node_modules_lookup_lib.es2018.regexp.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2018/regexp' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/regexp'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/regexp'
+Loading module '@typescript/lib-es2018/regexp' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2018/regexp' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2018/intl' from '/workspace/__lib_node_modules_lookup_lib.es2018.intl.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2018/intl' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/intl'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2018/intl'
+Loading module '@typescript/lib-es2018/intl' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2018/intl' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2019/array' from '/workspace/__lib_node_modules_lookup_lib.es2019.array.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2019/array' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/array'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/array'
+Loading module '@typescript/lib-es2019/array' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2019/array' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2019/object' from '/workspace/__lib_node_modules_lookup_lib.es2019.object.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2019/object' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/object'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/object'
+Loading module '@typescript/lib-es2019/object' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2019/object' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2019/string' from '/workspace/__lib_node_modules_lookup_lib.es2019.string.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2019/string' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/string'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/string'
+Loading module '@typescript/lib-es2019/string' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2019/string' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2019/symbol' from '/workspace/__lib_node_modules_lookup_lib.es2019.symbol.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2019/symbol' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/symbol'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/symbol'
+Loading module '@typescript/lib-es2019/symbol' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2019/symbol' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2019/intl' from '/workspace/__lib_node_modules_lookup_lib.es2019.intl.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2019/intl' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/intl'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2019/intl'
+Loading module '@typescript/lib-es2019/intl' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2019/intl' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/bigint' from '/workspace/__lib_node_modules_lookup_lib.es2020.bigint.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/bigint' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/bigint'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/bigint'
+Loading module '@typescript/lib-es2020/bigint' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/bigint' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/intl' from '/workspace/__lib_node_modules_lookup_lib.es2020.intl.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/intl' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/intl'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/intl'
+Loading module '@typescript/lib-es2020/intl' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/intl' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/date' from '/workspace/__lib_node_modules_lookup_lib.es2020.date.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/date' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/date'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/date'
+Loading module '@typescript/lib-es2020/date' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/date' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/number' from '/workspace/__lib_node_modules_lookup_lib.es2020.number.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/number' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/number'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/number'
+Loading module '@typescript/lib-es2020/number' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/number' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/promise' from '/workspace/__lib_node_modules_lookup_lib.es2020.promise.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/promise' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/promise'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/promise'
+Loading module '@typescript/lib-es2020/promise' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/promise' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/sharedmemory' from '/workspace/__lib_node_modules_lookup_lib.es2020.sharedmemory.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/sharedmemory' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/sharedmemory'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/sharedmemory'
+Loading module '@typescript/lib-es2020/sharedmemory' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/sharedmemory' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/string' from '/workspace/__lib_node_modules_lookup_lib.es2020.string.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/string' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/string'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/string'
+Loading module '@typescript/lib-es2020/string' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/string' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-es2020/symbol-wellknown' from '/workspace/__lib_node_modules_lookup_lib.es2020.symbol.wellknown.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-es2020/symbol-wellknown' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/symbol-wellknown'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-es2020/symbol-wellknown'
+Loading module '@typescript/lib-es2020/symbol-wellknown' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-es2020/symbol-wellknown' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-dom' from '/workspace/__lib_node_modules_lookup_lib.dom.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-dom' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-dom'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-dom'
+Loading module '@typescript/lib-dom' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-dom' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-webworker/importscripts' from '/workspace/__lib_node_modules_lookup_lib.webworker.importscripts.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-webworker/importscripts' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-webworker/importscripts'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-webworker/importscripts'
+Loading module '@typescript/lib-webworker/importscripts' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-webworker/importscripts' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-scripthost' from '/workspace/__lib_node_modules_lookup_lib.scripthost.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-scripthost' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-scripthost'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-scripthost'
+Loading module '@typescript/lib-scripthost' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-scripthost' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-dom/iterable' from '/workspace/__lib_node_modules_lookup_lib.dom.iterable.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-dom/iterable' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-dom/iterable'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-dom/iterable'
+Loading module '@typescript/lib-dom/iterable' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-dom/iterable' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+======== Resolving module '@typescript/lib-dom/asynciterable' from '/workspace/__lib_node_modules_lookup_lib.dom.asynciterable.d.ts__.ts'. ========
+Explicitly specified module resolution kind: 'Node10'.
+Loading module '@typescript/lib-dom/asynciterable' from 'node_modules' folder, target file types: TypeScript, Declaration.
+Searching all ancestor node_modules directories for preferred extensions: TypeScript, Declaration.
+Directory '/workspace/node_modules/@types' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-dom/asynciterable'
+Directory '/node_modules' does not exist, skipping all lookups in it.
+Scoped package detected, looking in 'typescript__lib-dom/asynciterable'
+Loading module '@typescript/lib-dom/asynciterable' from 'node_modules' folder, target file types: JavaScript.
+Searching all ancestor node_modules directories for fallback extensions: JavaScript.
+Directory '/node_modules' does not exist, skipping all lookups in it.
+======== Module name '@typescript/lib-dom/asynciterable' was not resolved. ========
+File '/workspace/node_modules/typescript/lib/package.json' does not exist according to earlier cached lookups.
+File '/workspace/node_modules/typescript/package.json' exists according to earlier cached lookups.
+test.ts(1,21): error TS2307: Cannot find module '@matrix/fusion/api/bff' or its corresponding type declarations.
