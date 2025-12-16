@@ -1,0 +1,31 @@
+// This is an example of what your index.d.ts should look like
+// Replace this with actual exports from your library
+
+// Re-export from subpath exports
+export * from './api/bff';
+export * from './api/nova';
+export * from './api/crud';
+export * from './api/jokes';
+export * from './shared/router';
+export * from './domains/cats/data-access';
+export * from './domains/cats/guards';
+export * from './domains/cats/models';
+export * from './domains/cats/public';
+export * from './domains/cats/config';
+export * from './domains/cats/smart-cats-list';
+export * from './domains/cats/smart-edit-cat';
+export * from './domains/cats/utils';
+export * from './domains/cats/smart-create-cat';
+export * from './domains/jokes/data-access';
+export * from './domains/jokes/config';
+export * from './domains/jokes/guards';
+export * from './domains/jokes/smart-jokes-list';
+export * from './domains/jokes/models';
+export * from './pages/cats/config';
+export * from './pages/home/config';
+export * from './pages/jokes/config';
+export * from './pages/not-found/config';
+
+// Keep the Angular workaround if needed (though it's usually not necessary for consumers)
+declare const ɵɵtsModuleIndicatorApiExtractorWorkaround = true;
+export { ɵɵtsModuleIndicatorApiExtractorWorkaround };
