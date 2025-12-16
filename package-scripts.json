@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build:prod": "ng build --configuration production",
+    "serve:prod": "ng build --configuration production && npx http-server dist/your-app-name -p 4200 -c-1",
+    "serve:prod:no-cache": "ng build --configuration production && cd dist/your-app-name && npx http-server -p 4200 -c-1 --proxy http://localhost:4200?",
+    "test:sw": "npm run build:prod && npm run serve:prod:no-cache"
+  }
+}
