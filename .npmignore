@@ -1,0 +1,19 @@
+# Build artifacts
+dist/out-tsc
+*.tsbuildinfo
+
+# Source files (only include compiled output)
+projects/
+src/
+*.ts
+!*.d.ts
+
+# Config files
+tsconfig*.json
+angular.json
+.resolve-paths.js
+
+# Development files
+.vscode/
+.idea/
+*.log

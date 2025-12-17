@@ -1,0 +1,12 @@
+{
+  "name": "my-angular-library",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "ng build my-lib --configuration production",
+    "build:lib": "ng build my-lib --configuration production && node resolve-paths.js",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "devDependencies": {
+    "glob": "^10.3.10"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "my-angular-library",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "ng build my-lib",
+    "build:lib": "ng build my-lib --configuration production && npm run resolve-paths",
+    "resolve-paths": "tsc-alias -p tsconfig.lib.json",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.8.8"
+  }
+}
