@@ -67,12 +67,6 @@ export class InpClickInterceptorService implements OnDestroy {
       // Some event patching layers can still throw here; safe to ignore.
     }
 
-    const anchor = this.resolveAnchorElement(matchedElement);
-    const originalHref = anchor?.getAttribute('href') ?? null;
-    if (originalHref) {
-      anchor.removeAttribute('href');
-    }
-
     const replayTarget = event.target;
     const eventInit = this.createEventInit(event);
 
@@ -80,10 +74,6 @@ export class InpClickInterceptorService implements OnDestroy {
     this.log('Intercepted click. Yielding for paint.', matchedElement);
 
     this.deferByAnimationFrames(this.config.yieldFrames, () => {
-      if (originalHref) {
-        anchor?.setAttribute('href', originalHref);
-      }
-
       this.isReplayingClick = true;
       this.log('Re-dispatching click.');
 
@@ -105,15 +95,6 @@ export class InpClickInterceptorService implements OnDestroy {
       }, timeout);
     });
   };
-
-  private resolveAnchorElement(target: Element): HTMLAnchorElement | null {
-    if (target instanceof HTMLAnchorElement) {
-      return target;
-    }
-
-    const anchor = target.closest('a[href]');
-    return anchor instanceof HTMLAnchorElement ? anchor : null;
-  }
 
   private createEventInit(event: MouseEvent): MouseEventInit {
     return {

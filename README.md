@@ -49,6 +49,16 @@ import { InpClickYieldDirective } from './inp-click-interceptor';
 export class ExampleComponent {}
 ```
 
+You can use it with both `href` and `routerLink`:
+
+```html
+<a inpClickYield routerLink="/games">Games (routerLink)</a>
+<button inpClickYield [routerLink]="['/profile', userId]">Profile (routerLink)</button>
+<a inpClickYield href="/terms">Terms (plain href)</a>
+```
+
+The interceptor does not depend on `href`; it defers and replays the click, so Angular's `routerLink` handlers still run normally.
+
 ### 3) Remove raw script/style from `index.html`
 
 The interceptor now injects its own loading style at runtime and starts via Angular bootstrap provider.
