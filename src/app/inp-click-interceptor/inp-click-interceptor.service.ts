@@ -7,13 +7,13 @@ import { INP_CLICK_INTERCEPTOR_CONFIG, InpClickInterceptorConfig } from './inp-c
   providedIn: 'root',
 })
 export class InpClickInterceptorService implements OnDestroy {
+  private readonly interceptSelector = '[data-inp-intercept]';
   private readonly styleElementId = 'inp-click-interceptor-style';
   private readonly eventListenerOptions: AddEventListenerOptions = {
     capture: true,
     passive: false,
   };
 
-  private readonly selectorQuery: string;
   private initialized = false;
   private isReplayingClick = false;
 
@@ -22,17 +22,10 @@ export class InpClickInterceptorService implements OnDestroy {
     @Inject(PLATFORM_ID) private readonly platformId: object,
     @Inject(INP_CLICK_INTERCEPTOR_CONFIG) private readonly config: InpClickInterceptorConfig,
     private readonly zone: NgZone,
-  ) {
-    this.selectorQuery = config.selectors.join(', ');
-  }
+  ) {}
 
   init(): void {
     if (this.initialized || !isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    if (!this.selectorQuery.trim()) {
-      this.log('No selectors configured. Interceptor disabled.');
       return;
     }
 
@@ -60,7 +53,7 @@ export class InpClickInterceptorService implements OnDestroy {
       return;
     }
 
-    const matchedElement = event.target.closest(this.selectorQuery);
+    const matchedElement = event.target.closest(this.interceptSelector);
     if (!matchedElement) {
       return;
     }

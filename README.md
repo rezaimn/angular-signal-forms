@@ -25,10 +25,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideInpClickInterceptor({
       debug: false,
-      selectors: [
-        // Extra selectors specific to your app
-        '[label="my-custom-cta"]',
-      ],
+      yieldFrames: 2,
     }),
   ],
 };
@@ -55,3 +52,4 @@ export class ExampleComponent {}
 ### 3) Remove raw script/style from `index.html`
 
 The interceptor now injects its own loading style at runtime and starts via Angular bootstrap provider.
+It only intercepts elements where `inpClickYield` is applied.

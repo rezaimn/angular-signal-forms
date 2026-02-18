@@ -7,16 +7,7 @@ import {
 } from './inp-click-interceptor.config';
 import { InpClickInterceptorService } from './inp-click-interceptor.service';
 
-export interface InpClickInterceptorOptions extends Partial<Omit<InpClickInterceptorConfig, 'selectors'>> {
-  /**
-   * Additional selectors appended to the defaults.
-   */
-  selectors?: readonly string[];
-  /**
-   * Fully replace all default selectors.
-   */
-  replaceSelectors?: readonly string[];
-}
+export type InpClickInterceptorOptions = Partial<InpClickInterceptorConfig>;
 
 export function provideInpClickInterceptor(options: InpClickInterceptorOptions = {}): EnvironmentProviders {
   const mergedConfig = mergeConfig(options);
@@ -40,22 +31,8 @@ function initializeInpClickInterceptor(service: InpClickInterceptorService): () 
 }
 
 function mergeConfig(options: InpClickInterceptorOptions): InpClickInterceptorConfig {
-  const { replaceSelectors, selectors: additionalSelectors, ...baseOptions } = options;
-  const selectorSource = replaceSelectors
-    ? replaceSelectors
-    : [...DEFAULT_INP_CLICK_INTERCEPTOR_CONFIG.selectors, ...(additionalSelectors ?? [])];
-
   return {
     ...DEFAULT_INP_CLICK_INTERCEPTOR_CONFIG,
-    ...baseOptions,
-    selectors: dedupeAndNormalizeSelectors(selectorSource),
+    ...options,
   };
-}
-
-function dedupeAndNormalizeSelectors(selectors: readonly string[]): readonly string[] {
-  const normalized = selectors
-    .map((selector) => selector.trim())
-    .filter((selector) => selector.length > 0);
-
-  return [...new Set(normalized)];
 }
