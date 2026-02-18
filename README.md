@@ -61,5 +61,45 @@ The interceptor does not depend on `href`; it defers and replays the click, so A
 
 ### 3) Remove raw script/style from `index.html`
 
-The interceptor now injects its own loading style at runtime and starts via Angular bootstrap provider.
-It only intercepts elements where `inpClickYield` is applied.
+The interceptor starts via Angular bootstrap provider and only intercepts elements where `inpClickYield` is applied.
+
+### 4) Add styles globally (`styles.css` + `angular.json`)
+
+The loading animation is now in `src/styles.css`:
+
+```css
+@keyframes inp-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.inp-loading {
+  animation: inp-pulse 0.8s ease-in-out infinite;
+  pointer-events: none !important;
+}
+```
+
+In your Angular app, ensure `src/styles.css` is loaded in `angular.json`:
+
+```json
+{
+  "projects": {
+    "your-app": {
+      "architect": {
+        "build": {
+          "options": {
+            "styles": ["src/styles.css"]
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+If you override `loadingClass` in `provideInpClickInterceptor(...)`, add matching CSS for that class.

@@ -8,7 +8,6 @@ import { INP_CLICK_INTERCEPTOR_CONFIG, InpClickInterceptorConfig } from './inp-c
 })
 export class InpClickInterceptorService implements OnDestroy {
   private readonly interceptSelector = '[data-inp-intercept]';
-  private readonly styleElementId = 'inp-click-interceptor-style';
   private readonly eventListenerOptions: AddEventListenerOptions = {
     capture: true,
     passive: false,
@@ -30,7 +29,6 @@ export class InpClickInterceptorService implements OnDestroy {
     }
 
     this.initialized = true;
-    this.ensureLoadingStyles();
 
     this.zone.runOutsideAngular(() => {
       this.document.addEventListener('click', this.handleCapturedClick, this.eventListenerOptions);
@@ -131,29 +129,6 @@ export class InpClickInterceptorService implements OnDestroy {
     };
 
     schedule(frames);
-  }
-
-  private ensureLoadingStyles(): void {
-    if (this.document.getElementById(this.styleElementId)) {
-      return;
-    }
-
-    const style = this.document.createElement('style');
-    style.id = this.styleElementId;
-
-    const escapedClass = this.getWindow().CSS?.escape?.(this.config.loadingClass) ?? this.config.loadingClass;
-    style.textContent = `
-@keyframes inp-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-.${escapedClass} {
-  animation: inp-pulse 0.8s ease-in-out infinite;
-  pointer-events: none !important;
-}
-`;
-
-    this.document.head.appendChild(style);
   }
 
   private log(message: string, ...args: unknown[]): void {
