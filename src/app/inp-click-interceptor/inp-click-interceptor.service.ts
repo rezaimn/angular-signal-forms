@@ -2,12 +2,13 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, NgZone, OnDestroy, PLATFORM_ID } from '@angular/core';
 
 import { INP_CLICK_INTERCEPTOR_CONFIG, InpClickInterceptorConfig } from './inp-click-interceptor.config';
+import { INP_CLICK_INTERCEPT_SELECTOR } from './inp-click-interceptor.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InpClickInterceptorService implements OnDestroy {
-  private readonly interceptSelector = '[data-inp-intercept]';
+  private readonly interceptSelector = INP_CLICK_INTERCEPT_SELECTOR;
   private readonly eventListenerOptions: AddEventListenerOptions = {
     capture: true,
     passive: false,

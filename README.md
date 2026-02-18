@@ -6,7 +6,7 @@ This repository now includes a reusable Angular implementation of your `index.ht
 
 - `InpClickInterceptorService` (global click capture + click replay)
 - `provideInpClickInterceptor(...)` (bootstrap-time setup + config)
-- `InpClickYieldDirective` (template opt-in via `data-inp-intercept`)
+- `InpClickYieldDirective` (template opt-in via `data-inp-intercept`; no `label` selectors)
 
 ### Files
 

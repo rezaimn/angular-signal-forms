@@ -1,0 +1,2 @@
+export const INP_CLICK_INTERCEPT_ATTRIBUTE = 'data-inp-intercept';
+export const INP_CLICK_INTERCEPT_SELECTOR = `[${INP_CLICK_INTERCEPT_ATTRIBUTE}]`;
