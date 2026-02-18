@@ -35,7 +35,7 @@ export class InpClickInterceptorService implements OnDestroy {
       this.document.addEventListener('click', this.handleCapturedClick, this.eventListenerOptions);
     });
 
-    this.log('Interceptor ready');
+    this.logAlways('Interceptor ready');
   }
 
   ngOnDestroy(): void {
@@ -139,6 +139,11 @@ export class InpClickInterceptorService implements OnDestroy {
 
     const now = this.getWindow().performance.now().toFixed(2);
     console.log('[INP]', now, message, ...args);
+  }
+
+  private logAlways(message: string, ...args: unknown[]): void {
+    const now = this.getWindow().performance.now().toFixed(2);
+    console.info('[INP]', now, message, ...args);
   }
 
   private getWindow(): Window {

@@ -31,6 +31,8 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
+`Interceptor ready` is always logged once in the console. Set `debug: true` to also see detailed interception/replay logs.
+
 ### 2) Opt-in per element with directive
 
 ```ts
