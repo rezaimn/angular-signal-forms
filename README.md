@@ -33,6 +33,22 @@ export const appConfig: ApplicationConfig = {
 
 `Interceptor ready` is always logged once in the console. Set `debug: true` to also see detailed interception/replay logs.
 
+No extra bootstrap/app-init wiring is required beyond this provider. `provideInpClickInterceptor(...)` already registers an `APP_INITIALIZER` internally.
+
+If your app is NgModule-based (non-standalone), add it to `AppModule.providers`:
+
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { provideInpClickInterceptor } from './inp-click-interceptor';
+
+@NgModule({
+  imports: [BrowserModule],
+  providers: [provideInpClickInterceptor({ debug: false, yieldFrames: 2 })],
+})
+export class AppModule {}
+```
+
 ### 2) Opt-in per element with directive
 
 ```ts
