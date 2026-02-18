@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, NgZone } from '@angular/core';
+import { Directive, ElementRef, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
 
 export interface InpYieldClickOptions {
   yieldFrames?: number;
@@ -18,19 +18,37 @@ export interface InpYieldClickOptions {
   selector: '[inpYieldClick]',
   standalone: true,
 })
-export class InpYieldClickDirective {
+export class InpYieldClickDirective implements OnInit, OnDestroy {
   @Input('inpYieldClick') options: InpYieldClickOptions | '' = '';
 
   private isReplaying = false;
   private removeLoadingTimer: number | null = null;
+  private cleanup: (() => void) | null = null;
 
   constructor(
     private readonly host: ElementRef<HTMLElement>,
     private readonly zone: NgZone,
   ) {}
 
-  @HostListener('click', ['$event'])
-  onClick(event: MouseEvent): void {
+  ngOnInit(): void {
+    this.zone.runOutsideAngular(() => {
+      const el = this.host.nativeElement;
+      const handler = (event: MouseEvent) => this.onClickCapture(event);
+      el.addEventListener('click', handler, { capture: true, passive: false });
+      this.cleanup = () => el.removeEventListener('click', handler, true);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.cleanup?.();
+    this.cleanup = null;
+    if (this.removeLoadingTimer != null) {
+      window.clearTimeout(this.removeLoadingTimer);
+      this.removeLoadingTimer = null;
+    }
+  }
+
+  private onClickCapture(event: MouseEvent): void {
     if (this.isReplaying) return;
 
     const opts = normalizeOptions(this.options);
@@ -67,6 +85,7 @@ export class InpYieldClickDirective {
     }
 
     const replayProps = pickMouseEventReplayProps(event);
+    const rawTarget = event.target instanceof Element ? event.target : el;
 
     this.zone.runOutsideAngular(() => {
       log('Intercepted, yielding for paint', { yieldFrames });
@@ -76,7 +95,7 @@ export class InpYieldClickDirective {
         this.isReplaying = true;
         log('Re-dispatching click');
         try {
-          el.dispatchEvent(
+          rawTarget.dispatchEvent(
             new MouseEvent('click', {
               bubbles: true,
               cancelable: true,

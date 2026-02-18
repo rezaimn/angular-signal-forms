@@ -76,6 +76,11 @@ import {
 export class AppModule {}
 ```
 
+#### Note on `routerLink`
+
+- **It works fine with `routerLink`** because the router navigates from its click handler; the first click is stopped, then the replayed click triggers navigation after your paint yield.
+- **Avoid selector matching like `[routerLink]`** as a way to target elements: in production builds Angular may not leave that attribute in the DOM (especially when using `[routerLink]="..."`). Prefer stable hooks like `label="..."`, `data-*`, or add `inpYieldClick` to the elements you want to intercept.
+
 ### 3) Optional: per-element directive (opt-in)
 
 ```ts
