@@ -1,0 +1,29 @@
+{
+  "name": "angular-signal-forms",
+  "version": "1.0.0",
+  "description": "Development environment scaffold for angular-signal-forms.",
+  "type": "module",
+  "main": "dist/test.js",
+  "types": "dist/test.d.ts",
+  "scripts": {
+    "dev": "tsx test.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --project tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezaimn/angular-signal-forms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rezaimn/angular-signal-forms/issues"
+  },
+  "homepage": "https://github.com/rezaimn/angular-signal-forms#readme",
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
